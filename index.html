@@ -7,6 +7,7 @@
 <title>My English Alphabet</title>
 
 <style>
+
 * {
   box-sizing: border-box;
 }
@@ -33,44 +34,69 @@ body {
 }
 
 /* مناطق الضغط على الحروف */
+
 .letter-button {
   position: absolute;
+
   width: 9%;
   aspect-ratio: 1 / 1;
+
   border: none;
   background: transparent;
+
   border-radius: 50%;
+
   cursor: pointer;
+
   padding: 0;
+
   z-index: 10;
+
   -webkit-tap-highlight-color: transparent;
 }
 
-/* تأثير عند الضغط */
+/* تأثير بسيط عند الضغط */
+
 .letter-button:active {
   background: rgba(255, 214, 0, 0.25);
   transform: scale(0.92);
 }
 
-/* الصفحة الثانية مخفية */
+
+/* الصفحة الثانية */
+
 #page2 {
   display: none;
 }
 
-/* زر الصفحة التالية */
+
+/* زر التالي والعودة */
+
 .next-button,
 .back-button {
+
   position: fixed;
+
   bottom: 15px;
+
   z-index: 50;
+
   border: none;
+
   background: #8bea00;
+
   color: white;
+
   font-size: 22px;
+
   font-weight: bold;
+
   padding: 12px 22px;
+
   border-radius: 30px;
+
   box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+
   cursor: pointer;
 }
 
@@ -84,278 +110,344 @@ body {
 
 .next-button:active,
 .back-button:active {
+
   transform: scale(0.9);
+
 }
+
 </style>
+
 </head>
+
 
 <body>
 
 
-<!-- ========================= -->
+<!-- ================================= -->
 <!-- الصفحة الأولى A إلى M -->
-<!-- ========================= -->
+<!-- ================================= -->
 
 <div class="book-page" id="page1">
 
-  <img src="page1.png" alt="English Alphabet A to M">
+<img src="page1.png" alt="English Alphabet A to M">
 
-  <!-- A -->
-  <button class="letter-button"
-          style="left:7%; top:3%;"
-          onclick="speak('A')">
-  </button>
 
-  <!-- B -->
-  <button class="letter-button"
-          style="left:27%; top:3%;"
-          onclick="speak('B')">
-  </button>
+<!-- A -->
 
-  <!-- C -->
-  <button class="letter-button"
-          style="left:45%; top:3%;"
-          onclick="speak('C')">
-  </button>
+<button
+class="letter-button"
+style="left:7%; top:3%;"
+onclick="playLetter('A')">
+</button>
 
-  <!-- D -->
-  <button class="letter-button"
-          style="left:71%; top:3%;"
-          onclick="speak('D')">
-  </button>
 
-  <!-- E -->
-  <button class="letter-button"
-          style="left:0%; top:27%;"
-          onclick="speak('E')">
-  </button>
+<!-- B -->
 
-  <!-- F -->
-  <button class="letter-button"
-          style="left:18%; top:28%;"
-          onclick="speak('F')">
-  </button>
+<button
+class="letter-button"
+style="left:27%; top:3%;"
+onclick="playLetter('B')">
+</button>
 
-  <!-- G -->
-  <button class="letter-button"
-          style="left:36%; top:27%;"
-          onclick="speak('G')">
-  </button>
 
-  <!-- H -->
-  <button class="letter-button"
-          style="left:55%; top:27%;"
-          onclick="speak('H')">
-  </button>
+<!-- C -->
 
-  <!-- I -->
-  <button class="letter-button"
-          style="left:77%; top:26%;"
-          onclick="speak('I')">
-  </button>
+<button
+class="letter-button"
+style="left:45%; top:3%;"
+onclick="playLetter('C')">
+</button>
 
-  <!-- J -->
-  <button class="letter-button"
-          style="left:5%; top:69%;"
-          onclick="speak('J')">
-  </button>
 
-  <!-- K -->
-  <button class="letter-button"
-          style="left:25%; top:69%;"
-          onclick="speak('K')">
-  </button>
+<!-- D -->
 
-  <!-- L -->
-  <button class="letter-button"
-          style="left:45%; top:69%;"
-          onclick="speak('L')">
-  </button>
+<button
+class="letter-button"
+style="left:71%; top:3%;"
+onclick="playLetter('D')">
+</button>
 
-  <!-- M -->
-  <button class="letter-button"
-          style="left:68%; top:68%;"
-          onclick="speak('M')">
-  </button>
+
+<!-- E -->
+
+<button
+class="letter-button"
+style="left:0%; top:27%;"
+onclick="playLetter('E')">
+</button>
+
+
+<!-- F -->
+
+<button
+class="letter-button"
+style="left:18%; top:28%;"
+onclick="playLetter('F')">
+</button>
+
+
+<!-- G -->
+
+<button
+class="letter-button"
+style="left:36%; top:27%;"
+onclick="playLetter('G')">
+</button>
+
+
+<!-- H -->
+
+<button
+class="letter-button"
+style="left:55%; top:27%;"
+onclick="playLetter('H')">
+</button>
+
+
+<!-- I -->
+
+<button
+class="letter-button"
+style="left:77%; top:26%;"
+onclick="playLetter('I')">
+</button>
+
+
+<!-- J -->
+
+<button
+class="letter-button"
+style="left:5%; top:69%;"
+onclick="playLetter('J')">
+</button>
+
+
+<!-- K -->
+
+<button
+class="letter-button"
+style="left:25%; top:69%;"
+onclick="playLetter('K')">
+</button>
+
+
+<!-- L -->
+
+<button
+class="letter-button"
+style="left:45%; top:69%;"
+onclick="playLetter('L')">
+</button>
+
+
+<!-- M -->
+
+<button
+class="letter-button"
+style="left:68%; top:68%;"
+onclick="playLetter('M')">
+</button>
+
 
 </div>
 
 
-<!-- ========================= -->
+
+<!-- ================================= -->
 <!-- الصفحة الثانية N إلى Z -->
-<!-- ========================= -->
+<!-- ================================= -->
 
 <div class="book-page" id="page2">
 
-  <img src="page2.png" alt="English Alphabet N to Z">
+<img src="page2.png" alt="English Alphabet N to Z">
 
-  <!-- N -->
-  <button class="letter-button"
-          style="left:7%; top:3%;"
-          onclick="speak('N')">
-  </button>
 
-  <!-- O -->
-  <button class="letter-button"
-          style="left:27%; top:3%;"
-          onclick="speak('O')">
-  </button>
+<!-- N -->
 
-  <!-- P -->
-  <button class="letter-button"
-          style="left:45%; top:3%;"
-          onclick="speak('P')">
-  </button>
+<button
+class="letter-button"
+style="left:7%; top:3%;"
+onclick="playLetter('N')">
+</button>
 
-  <!-- Q -->
-  <button class="letter-button"
-          style="left:71%; top:3%;"
-          onclick="speak('Q')">
-  </button>
 
-  <!-- R -->
-  <button class="letter-button"
-          style="left:0%; top:27%;"
-          onclick="speak('R')">
-  </button>
+<!-- O -->
 
-  <!-- S -->
-  <button class="letter-button"
-          style="left:18%; top:28%;"
-          onclick="speak('S')">
-  </button>
+<button
+class="letter-button"
+style="left:27%; top:3%;"
+onclick="playLetter('O')">
+</button>
 
-  <!-- T -->
-  <button class="letter-button"
-          style="left:36%; top:27%;"
-          onclick="speak('T')">
-  </button>
 
-  <!-- U -->
-  <button class="letter-button"
-          style="left:55%; top:27%;"
-          onclick="speak('U')">
-  </button>
+<!-- P -->
 
-  <!-- V -->
-  <button class="letter-button"
-          style="left:77%; top:26%;"
-          onclick="speak('V')">
-  </button>
+<button
+class="letter-button"
+style="left:45%; top:3%;"
+onclick="playLetter('P')">
+</button>
 
-  <!-- W -->
-  <button class="letter-button"
-          style="left:5%; top:69%;"
-          onclick="speak('W')">
-  </button>
 
-  <!-- X -->
-  <button class="letter-button"
-          style="left:25%; top:69%;"
-          onclick="speak('X')">
-  </button>
+<!-- Q -->
 
-  <!-- Y -->
-  <button class="letter-button"
-          style="left:45%; top:69%;"
-          onclick="speak('Y')">
-  </button>
+<button
+class="letter-button"
+style="left:71%; top:3%;"
+onclick="playLetter('Q')">
+</button>
 
-  <!-- Z -->
-  <button class="letter-button"
-          style="left:68%; top:68%;"
-          onclick="speak('Z')">
-  </button>
+
+<!-- R -->
+
+<button
+class="letter-button"
+style="left:0%; top:27%;"
+onclick="playLetter('R')">
+</button>
+
+
+<!-- S -->
+
+<button
+class="letter-button"
+style="left:18%; top:28%;"
+onclick="playLetter('S')">
+</button>
+
+
+<!-- T -->
+
+<button
+class="letter-button"
+style="left:36%; top:27%;"
+onclick="playLetter('T')">
+</button>
+
+
+<!-- U -->
+
+<button
+class="letter-button"
+style="left:55%; top:27%;"
+onclick="playLetter('U')">
+</button>
+
+
+<!-- V -->
+
+<button
+class="letter-button"
+style="left:77%; top:26%;"
+onclick="playLetter('V')">
+</button>
+
+
+<!-- W -->
+
+<button
+class="letter-button"
+style="left:5%; top:69%;"
+onclick="playLetter('W')">
+</button>
+
+
+<!-- X -->
+
+<button
+class="letter-button"
+style="left:25%; top:69%;"
+onclick="playLetter('X')">
+</button>
+
+
+<!-- Y -->
+
+<button
+class="letter-button"
+style="left:45%; top:69%;"
+onclick="playLetter('Y')">
+</button>
+
+
+<!-- Z -->
+
+<button
+class="letter-button"
+style="left:68%; top:68%;"
+onclick="playLetter('Z')">
+</button>
+
 
 </div>
+
 
 
 <!-- أزرار التنقل -->
 
-<button class="next-button"
-        onclick="showPage2()">
-  Next ➜
+
+<button
+class="next-button"
+onclick="showPage2()">
+
+Next ➜
+
 </button>
 
-<button class="back-button"
-        onclick="showPage1()"
-        style="display:none;">
-  ← Back
+
+<button
+class="back-button"
+onclick="showPage1()"
+style="display:none;">
+
+← Back
+
 </button>
+
 
 
 <script>
 
-/* ================================= */
-/* نطق الحروف بصوت بطيء وواضح */
-/* ================================= */
+/* ========================================= */
+/* تشغيل ملف الصوت الخاص بالحرف */
+/* ========================================= */
 
-function speak(letter) {
-
-  // إيقاف أي صوت سابق
-  window.speechSynthesis.cancel();
-
-  function speakLetter() {
-
-    const voices = window.speechSynthesis.getVoices();
-
-    // البحث عن صوت إنجليزي
-    let voice =
-      voices.find(v => v.lang === "en-US") ||
-      voices.find(v => v.lang.startsWith("en-US")) ||
-      voices.find(v => v.lang.startsWith("en"));
-
-    const utterance =
-      new SpeechSynthesisUtterance(letter);
-
-    // اللغة الإنجليزية
-    utterance.lang = "en-US";
-
-    // سرعة بطيئة جدًا وواضحة للأطفال
-    utterance.rate = 0.55;
-
-    // نبرة الصوت
-    utterance.pitch = 1.0;
-
-    // أعلى مستوى للصوت
-    utterance.volume = 1.0;
-
-    // استخدام الصوت الإنجليزي
-    if (voice) {
-      utterance.voice = voice;
-    }
-
-    // تشغيل الصوت
-    window.speechSynthesis.speak(utterance);
-  }
+let currentAudio = null;
 
 
-  // بعض الأجهزة تحتاج تحميل الأصوات
-  const voices =
-    window.speechSynthesis.getVoices();
+function playLetter(letter) {
 
-  if (voices.length === 0) {
+  // إيقاف الصوت السابق
 
-    window.speechSynthesis.onvoiceschanged =
-      function() {
+  if (currentAudio) {
 
-        window.speechSynthesis.onvoiceschanged = null;
+    currentAudio.pause();
 
-        speakLetter();
-
-      };
-
-  } else {
-
-    speakLetter();
+    currentAudio.currentTime = 0;
 
   }
+
+
+  // اختيار ملف الصوت
+
+  currentAudio = new Audio(letter + ".mp3");
+
+
+  // تشغيل الصوت
+
+  currentAudio.play().catch(function(error) {
+
+    console.log("Audio could not play:", error);
+
+  });
+
 }
 
 
-/* ================================= */
+
+/* ========================================= */
 /* الانتقال للصفحة الثانية */
-/* ================================= */
+/* ========================================= */
 
 function showPage2() {
 
@@ -368,12 +460,14 @@ function showPage2() {
   document.querySelector(".back-button").style.display = "block";
 
   window.scrollTo(0, 0);
+
 }
 
 
-/* ================================= */
-/* الرجوع للصفحة الأولى */
-/* ================================= */
+
+/* ========================================= */
+/* العودة للصفحة الأولى */
+/* ========================================= */
 
 function showPage1() {
 
@@ -386,9 +480,12 @@ function showPage1() {
   document.querySelector(".next-button").style.display = "block";
 
   window.scrollTo(0, 0);
+
 }
 
 </script>
 
+
 </body>
+
 </html>
