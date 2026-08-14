@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Numbers 1 to 10</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: white;
+    overflow-x: hidden;
+}
+
+.page {
+    position: relative;
+    width: 100%;
+    max-width: 1024px;
+    margin: auto;
+}
+
+.page img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* أزرار الأرقام */
+.number-button {
+    position: absolute;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 30px;
+    padding: 0;
+}
+
+.number-button:active {
+    background: rgba(255, 220, 0, 0.25);
+    transform: scale(0.94);
+}
+
+/* إخفاء الصفحة الثانية */
+#page2 {
+    display: none;
+}
+
+/* أزرار الانتقال */
+.next-button,
+.back-button {
+    position: fixed;
+    bottom: 15px;
+    z-index: 50;
+
+    border: none;
+    background: #8bea00;
+    color: white;
+
+    font-size: 20px;
+    font-weight: bold;
+
+    padding: 12px 22px;
+    border-radius: 30px;
+
+    box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+
+    cursor: pointer;
+}
+
+.next-button {
+    right: 15px;
+}
+
+.back-button {
+    left: 15px;
+}
+
+.next-button:active,
+.back-button:active {
+    transform: scale(0.9);
+}
+</style>
+</head>
+
+<body>
+
+
+<!-- ========================= -->
+<!-- الصفحة الأولى: 1 إلى 5 -->
+<!-- ========================= -->
+
+<div class="page" id="page1">
+
+    <img src="numbers1.png" alt="Numbers 1 to 5">
+
+
+    <!-- الرقم 1 -->
+    <button
+        class="number-button"
+        style="left: 3%; top: 24%; width: 28%; height: 23%;"
+        onclick="playNumber(1)">
+    </button>
+
+
+    <!-- الرقم 2 -->
+    <button
+        class="number-button"
+        style="left: 34%; top: 4%; width: 27%; height: 16%;"
+        onclick="playNumber(2)">
+    </button>
+
+
+    <!-- الرقم 3 -->
+    <button
+        class="number-button"
+        style="left: 68%; top: 4%; width: 28%; height: 17%;"
+        onclick="playNumber(3)">
+    </button>
+
+
+    <!-- الرقم 4 -->
+    <button
+        class="number-button"
+        style="left: 34%; top: 47%; width: 27%; height: 15%;"
+        onclick="playNumber(4)">
+    </button>
+
+
+    <!-- الرقم 5 -->
+    <button
+        class="number-button"
+        style="left: 68%; top: 46%; width: 28%; height: 16%;"
+        onclick="playNumber(5)">
+    </button>
+
+</div>
+
+
+
+<!-- ========================= -->
+<!-- الصفحة الثانية: 6 إلى 10 -->
+<!-- ========================= -->
+
+<div class="page" id="page2">
+
+    <img src="numbers2.png" alt="Numbers 6 to 10">
+
+
+    <!-- الرقم 6 -->
+    <button
+        class="number-button"
+        style="left: 34%; top: 5%; width: 27%; height: 16%;"
+        onclick="playNumber(6)">
+    </button>
+
+
+    <!-- الرقم 7 -->
+    <button
+        class="number-button"
+        style="left: 69%; top: 5%; width: 28%; height: 15%;"
+        onclick="playNumber(7)">
+    </button>
+
+
+    <!-- الرقم 8 -->
+    <button
+        class="number-button"
+        style="left: 3%; top: 28%; width: 27%; height: 15%;"
+        onclick="playNumber(8)">
+    </button>
+
+
+    <!-- الرقم 9 -->
+    <button
+        class="number-button"
+        style="left: 34%; top: 46%; width: 27%; height: 16%;"
+        onclick="playNumber(9)">
+    </button>
+
+
+    <!-- الرقم 10 -->
+    <button
+        class="number-button"
+        style="left: 68%; top: 46%; width: 29%; height: 16%;"
+        onclick="playNumber(10)">
+    </button>
+
+</div>
+
+
+
+<!-- أزرار التنقل -->
+
+<button
+    class="next-button"
+    id="nextButton"
+    onclick="showPage2()">
+    Next ➜
+</button>
+
+<button
+    class="back-button"
+    id="backButton"
+    onclick="showPage1()"
+    style="display:none;">
+    ← Back
+</button>
+
+
+
+<script>
+
+let currentAudio = null;
+
+
+/* تشغيل صوت الرقم */
+
+function playNumber(number) {
+
+    if (currentAudio) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+    }
+
+    currentAudio = new Audio(number + ".mp3");
+
+    currentAudio.play().catch(function(error) {
+        console.log("Audio error:", error);
+    });
+}
+
+
+
+/* الانتقال للصفحة الثانية */
+
+function showPage2() {
+
+    document.getElementById("page1").style.display = "none";
+    document.getElementById("page2").style.display = "block";
+
+    document.getElementById("nextButton").style.display = "none";
+    document.getElementById("backButton").style.display = "block";
+
+    window.scrollTo(0, 0);
+}
+
+
+
+/* الرجوع للصفحة الأولى */
+
+function showPage1() {
+
+    document.getElementById("page2").style.display = "none";
+    document.getElementById("page1").style.display = "block";
+
+    document.getElementById("nextButton").style.display = "block";
+    document.getElementById("backButton").style.display = "none";
+
+    window.scrollTo(0, 0);
+}
+
+</script>
+
+</body>
+</html>
