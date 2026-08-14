@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>English Alphabet</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: #FFF8E7;
+  padding: 20px;
+}
+
+h1 {
+  color: #333;
+  font-size: 32px;
+}
+
+.subtitle {
+  color: #777;
+  font-size: 20px;
+  margin-bottom: 25px;
+}
+
+.letters {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  max-width: 500px;
+  margin: auto;
+}
+
+.letter {
+  background: white;
+  border-radius: 20px;
+  padding: 18px;
+  font-size: 38px;
+  font-weight: bold;
+  color: #333;
+  box-shadow: 0 3px 10px #ddd;
+}
+
+button {
+  font-size: 24px;
+  border: none;
+  background: #FFD166;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+button:active {
+  transform: scale(0.9);
+}
+</style>
+</head>
+
+<body>
+
+<h1>🔤 Let's Learn the Alphabet!</h1>
+
+<div class="subtitle">
+Tap the 🔊 to hear the letter
+</div>
+
+<div class="letters">
+
+<div class="letter">A
+<button onclick="speak('A')">🔊</button>
+</div>
+
+<div class="letter">B
+<button onclick="speak('B')">🔊</button>
+</div>
+
+<div class="letter">C
+<button onclick="speak('C')">🔊</button>
+</div>
+
+<div class="letter">D
+<button onclick="speak('D')">🔊</button>
+</div>
+
+<div class="letter">E
+<button onclick="speak('E')">🔊</button>
+</div>
+
+<div class="letter">F
+<button onclick="speak('F')">🔊</button>
+</div>
+
+<div class="letter">G
+<button onclick="speak('G')">🔊</button>
+</div>
+
+<div class="letter">H
+<button onclick="speak('H')">🔊</button>
+</div>
+
+<div class="letter">I
+<button onclick="speak('I')">🔊</button>
+</div>
+
+<div class="letter">J
+<button onclick="speak('J')">🔊</button>
+</div>
+
+<div class="letter">K
+<button onclick="speak('K')">🔊</button>
+</div>
+
+<div class="letter">L
+<button onclick="speak('L')">🔊</button>
+</div>
+
+<div class="letter">M
+<button onclick="speak('M')">🔊</button>
+</div>
+
+<div class="letter">N
+<button onclick="speak('N')">🔊</button>
+</div>
+
+<div class="letter">O
+<button onclick="speak('O')">🔊</button>
+</div>
+
+<div class="letter">P
+<button onclick="speak('P')">🔊</button>
+</div>
+
+<div class="letter">Q
+<button onclick="speak('Q')">🔊</button>
+</div>
+
+<div class="letter">R
+<button onclick="speak('R')">🔊</button>
+</div>
+
+<div class="letter">S
+<button onclick="speak('S')">🔊</button>
+</div>
+
+<div class="letter">T
+<button onclick="speak('T')">🔊</button>
+</div>
+
+<div class="letter">U
+<button onclick="speak('U')">🔊</button>
+</div>
+
+<div class="letter">V
+<button onclick="speak('V')">🔊</button>
+</div>
+
+<div class="letter">W
+<button onclick="speak('W')">🔊</button>
+</div>
+
+<div class="letter">X
+<button onclick="speak('X')">🔊</button>
+</div>
+
+<div class="letter">Y
+<button onclick="speak('Y')">🔊</button>
+</div>
+
+<div class="letter">Z
+<button onclick="speak('Z')">🔊</button>
+</div>
+
+</div>
+
+<script>
+
+function speak(letter) {
+
+  window.speechSynthesis.cancel();
+
+  const voice = new SpeechSynthesisUtterance(letter);
+
+  voice.lang = "en-US";
+  voice.rate = 0.75;
+  voice.pitch = 1;
+
+  window.speechSynthesis.speak(voice);
+
+}
+
+</script>
+
+</body>
+</html>
