@@ -1,11 +1,29 @@
-function playLetter(letter) {
-
-  if (currentAudio) {
-    currentAudio.pause();
-    currentAudio.currentTime = 0;
-  }
-
-  currentAudio = new Audio(letter + ".mp3");
-
-  currentAudio.play();
-}
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My English Alphabet</title>
+<style>
+*{box-sizing:border-box}body{margin:0;padding:0;background:#fff;overflow-x:hidden}
+.book-page{position:relative;width:100%;max-width:1455px;margin:auto;aspect-ratio:1455/1025}
+.book-page img{width:100%;height:100%;display:block}
+.letter-button{position:absolute;width:9%;aspect-ratio:1;border:none;background:transparent;border-radius:50%;cursor:pointer;padding:0;z-index:10;-webkit-tap-highlight-color:transparent}
+.letter-button:active{background:rgba(255,214,0,.25);transform:scale(.92)}
+#page2{display:none}
+.next-button,.back-button{position:fixed;bottom:15px;z-index:50;border:none;background:#8bea00;color:#fff;font-size:22px;font-weight:bold;padding:12px 22px;border-radius:30px;box-shadow:0 3px 10px rgba(0,0,0,.25);cursor:pointer}
+.next-button{right:15px}.back-button{left:15px}
+</style></head><body>
+<div class="book-page" id="page1"><img src="page1.png" alt="English Alphabet A to M">
+<button class="letter-button" style="left:7%;top:3%" onclick="playLetter('A')"></button><button class="letter-button" style="left:27%;top:3%" onclick="playLetter('B')"></button><button class="letter-button" style="left:45%;top:3%" onclick="playLetter('C')"></button><button class="letter-button" style="left:71%;top:3%" onclick="playLetter('D')"></button>
+<button class="letter-button" style="left:0%;top:27%" onclick="playLetter('E')"></button><button class="letter-button" style="left:18%;top:28%" onclick="playLetter('F')"></button><button class="letter-button" style="left:36%;top:27%" onclick="playLetter('G')"></button><button class="letter-button" style="left:55%;top:27%" onclick="playLetter('H')"></button><button class="letter-button" style="left:77%;top:26%" onclick="playLetter('I')"></button>
+<button class="letter-button" style="left:5%;top:69%" onclick="playLetter('J')"></button><button class="letter-button" style="left:25%;top:69%" onclick="playLetter('K')"></button><button class="letter-button" style="left:45%;top:69%" onclick="playLetter('L')"></button><button class="letter-button" style="left:68%;top:68%" onclick="playLetter('M')"></button></div>
+<div class="book-page" id="page2"><img src="page2.png" alt="English Alphabet N to Z">
+<button class="letter-button" style="left:7%;top:3%" onclick="playLetter('N')"></button><button class="letter-button" style="left:27%;top:3%" onclick="playLetter('O')"></button><button class="letter-button" style="left:45%;top:3%" onclick="playLetter('P')"></button><button class="letter-button" style="left:71%;top:3%" onclick="playLetter('Q')"></button>
+<button class="letter-button" style="left:0%;top:27%" onclick="playLetter('R')"></button><button class="letter-button" style="left:18%;top:28%" onclick="playLetter('S')"></button><button class="letter-button" style="left:36%;top:27%" onclick="playLetter('T')"></button><button class="letter-button" style="left:55%;top:27%" onclick="playLetter('U')"></button><button class="letter-button" style="left:77%;top:26%" onclick="playLetter('V')"></button>
+<button class="letter-button" style="left:5%;top:69%" onclick="playLetter('W')"></button><button class="letter-button" style="left:25%;top:69%" onclick="playLetter('X')"></button><button class="letter-button" style="left:45%;top:69%" onclick="playLetter('Y')"></button><button class="letter-button" style="left:68%;top:68%" onclick="playLetter('Z')"></button></div>
+<button class="next-button" onclick="showPage2()">Next ➜</button><button class="back-button" onclick="showPage1()" style="display:none">← Back</button>
+<script>
+let currentAudio=null;
+function playLetter(letter){if(currentAudio){currentAudio.pause();currentAudio.currentTime=0;}currentAudio=new Audio(letter+".mp3");currentAudio.play().catch(function(error){console.log("Audio error:",error);});}
+function showPage2(){document.getElementById("page1").style.display="none";document.getElementById("page2").style.display="block";document.querySelector(".next-button").style.display="none";document.querySelector(".back-button").style.display="block";window.scrollTo(0,0);}
+function showPage1(){document.getElementById("page2").style.display="none";document.getElementById("page1").style.display="block";document.querySelector(".back-button").style.display="none";document.querySelector(".next-button").style.display="block";window.scrollTo(0,0);}
+</script></body></html>
