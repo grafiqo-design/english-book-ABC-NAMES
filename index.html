@@ -4,57 +4,85 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>English Alphabet</title>
+<title>My English Alphabet</title>
 
 <style>
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  background: #FFF8E7;
-  padding: 20px;
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  overflow-x: hidden;
 }
 
-h1 {
-  color: #333;
-  font-size: 32px;
-}
-
-.subtitle {
-  color: #777;
-  font-size: 20px;
-  margin-bottom: 25px;
-}
-
-.letters {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-  max-width: 500px;
+.book-page {
+  position: relative;
+  width: 100%;
+  max-width: 1455px;
   margin: auto;
+  aspect-ratio: 1455 / 1025;
 }
 
-.letter {
-  background: white;
-  border-radius: 20px;
-  padding: 18px;
-  font-size: 38px;
-  font-weight: bold;
-  color: #333;
-  box-shadow: 0 3px 10px #ddd;
+.book-page img {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
-button {
-  font-size: 24px;
+/* مناطق الضغط على الحروف */
+.letter-button {
+  position: absolute;
+  width: 9%;
+  aspect-ratio: 1 / 1;
   border: none;
-  background: #FFD166;
+  background: transparent;
   border-radius: 50%;
-  width: 55px;
-  height: 55px;
   cursor: pointer;
-  margin-left: 10px;
+  padding: 0;
+  z-index: 10;
 }
 
-button:active {
+/* عند الضغط يظهر تأثير بسيط */
+.letter-button:active {
+  background: rgba(255, 214, 0, 0.25);
+  transform: scale(0.92);
+}
+
+/* الصفحة الثانية مخفية بالبداية */
+#page2 {
+  display: none;
+}
+
+/* زر الانتقال */
+.next-button,
+.back-button {
+  position: fixed;
+  bottom: 15px;
+  z-index: 50;
+  border: none;
+  background: #8bea00;
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 12px 22px;
+  border-radius: 30px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+  cursor: pointer;
+}
+
+.next-button {
+  right: 15px;
+}
+
+.back-button {
+  left: 15px;
+}
+
+.next-button:active,
+.back-button:active {
   transform: scale(0.9);
 }
 </style>
@@ -62,134 +90,178 @@ button:active {
 
 <body>
 
-<h1>🔤 Let's Learn the Alphabet!</h1>
+<!-- الصفحة الأولى A-M -->
+<div class="book-page" id="page1">
 
-<div class="subtitle">
-Tap the 🔊 to hear the letter
-</div>
+  <img src="page1.png" alt="English Alphabet A to M">
 
-<div class="letters">
+  <!-- A -->
+  <button class="letter-button" style="left:7%; top:3%;"
+          onclick="speak('A')"></button>
 
-<div class="letter">A
-<button onclick="speak('A')">🔊</button>
-</div>
+  <!-- B -->
+  <button class="letter-button" style="left:27%; top:3%;"
+          onclick="speak('B')"></button>
 
-<div class="letter">B
-<button onclick="speak('B')">🔊</button>
-</div>
+  <!-- C -->
+  <button class="letter-button" style="left:45%; top:3%;"
+          onclick="speak('C')"></button>
 
-<div class="letter">C
-<button onclick="speak('C')">🔊</button>
-</div>
+  <!-- D -->
+  <button class="letter-button" style="left:71%; top:3%;"
+          onclick="speak('D')"></button>
 
-<div class="letter">D
-<button onclick="speak('D')">🔊</button>
-</div>
+  <!-- E -->
+  <button class="letter-button" style="left:0%; top:27%;"
+          onclick="speak('E')"></button>
 
-<div class="letter">E
-<button onclick="speak('E')">🔊</button>
-</div>
+  <!-- F -->
+  <button class="letter-button" style="left:18%; top:28%;"
+          onclick="speak('F')"></button>
 
-<div class="letter">F
-<button onclick="speak('F')">🔊</button>
-</div>
+  <!-- G -->
+  <button class="letter-button" style="left:36%; top:27%;"
+          onclick="speak('G')"></button>
 
-<div class="letter">G
-<button onclick="speak('G')">🔊</button>
-</div>
+  <!-- H -->
+  <button class="letter-button" style="left:55%; top:27%;"
+          onclick="speak('H')"></button>
 
-<div class="letter">H
-<button onclick="speak('H')">🔊</button>
-</div>
+  <!-- I -->
+  <button class="letter-button" style="left:77%; top:26%;"
+          onclick="speak('I')"></button>
 
-<div class="letter">I
-<button onclick="speak('I')">🔊</button>
-</div>
+  <!-- J -->
+  <button class="letter-button" style="left:5%; top:69%;"
+          onclick="speak('J')"></button>
 
-<div class="letter">J
-<button onclick="speak('J')">🔊</button>
-</div>
+  <!-- K -->
+  <button class="letter-button" style="left:25%; top:69%;"
+          onclick="speak('K')"></button>
 
-<div class="letter">K
-<button onclick="speak('K')">🔊</button>
-</div>
+  <!-- L -->
+  <button class="letter-button" style="left:45%; top:69%;"
+          onclick="speak('L')"></button>
 
-<div class="letter">L
-<button onclick="speak('L')">🔊</button>
-</div>
-
-<div class="letter">M
-<button onclick="speak('M')">🔊</button>
-</div>
-
-<div class="letter">N
-<button onclick="speak('N')">🔊</button>
-</div>
-
-<div class="letter">O
-<button onclick="speak('O')">🔊</button>
-</div>
-
-<div class="letter">P
-<button onclick="speak('P')">🔊</button>
-</div>
-
-<div class="letter">Q
-<button onclick="speak('Q')">🔊</button>
-</div>
-
-<div class="letter">R
-<button onclick="speak('R')">🔊</button>
-</div>
-
-<div class="letter">S
-<button onclick="speak('S')">🔊</button>
-</div>
-
-<div class="letter">T
-<button onclick="speak('T')">🔊</button>
-</div>
-
-<div class="letter">U
-<button onclick="speak('U')">🔊</button>
-</div>
-
-<div class="letter">V
-<button onclick="speak('V')">🔊</button>
-</div>
-
-<div class="letter">W
-<button onclick="speak('W')">🔊</button>
-</div>
-
-<div class="letter">X
-<button onclick="speak('X')">🔊</button>
-</div>
-
-<div class="letter">Y
-<button onclick="speak('Y')">🔊</button>
-</div>
-
-<div class="letter">Z
-<button onclick="speak('Z')">🔊</button>
-</div>
+  <!-- M -->
+  <button class="letter-button" style="left:68%; top:68%;"
+          onclick="speak('M')"></button>
 
 </div>
+
+
+<!-- الصفحة الثانية N-Z -->
+<div class="book-page" id="page2">
+
+  <img src="page2.png" alt="English Alphabet N to Z">
+
+  <!-- N -->
+  <button class="letter-button" style="left:7%; top:3%;"
+          onclick="speak('N')"></button>
+
+  <!-- O -->
+  <button class="letter-button" style="left:27%; top:3%;"
+          onclick="speak('O')"></button>
+
+  <!-- P -->
+  <button class="letter-button" style="left:45%; top:3%;"
+          onclick="speak('P')"></button>
+
+  <!-- Q -->
+  <button class="letter-button" style="left:71%; top:3%;"
+          onclick="speak('Q')"></button>
+
+  <!-- R -->
+  <button class="letter-button" style="left:0%; top:27%;"
+          onclick="speak('R')"></button>
+
+  <!-- S -->
+  <button class="letter-button" style="left:18%; top:28%;"
+          onclick="speak('S')"></button>
+
+  <!-- T -->
+  <button class="letter-button" style="left:36%; top:27%;"
+          onclick="speak('T')"></button>
+
+  <!-- U -->
+  <button class="letter-button" style="left:55%; top:27%;"
+          onclick="speak('U')"></button>
+
+  <!-- V -->
+  <button class="letter-button" style="left:77%; top:26%;"
+          onclick="speak('V')"></button>
+
+  <!-- W -->
+  <button class="letter-button" style="left:5%; top:69%;"
+          onclick="speak('W')"></button>
+
+  <!-- X -->
+  <button class="letter-button" style="left:25%; top:69%;"
+          onclick="speak('X')"></button>
+
+  <!-- Y -->
+  <button class="letter-button" style="left:45%; top:69%;"
+          onclick="speak('Y')"></button>
+
+  <!-- Z -->
+  <button class="letter-button" style="left:68%; top:68%;"
+          onclick="speak('Z')"></button>
+
+</div>
+
+
+<!-- أزرار التنقل -->
+<button class="next-button" onclick="showPage2()">
+  Next ➜
+</button>
+
+<button class="back-button" onclick="showPage1()" style="display:none;">
+  ← Back
+</button>
+
 
 <script>
 
 function speak(letter) {
 
+  // إيقاف أي صوت سابق
   window.speechSynthesis.cancel();
 
   const voice = new SpeechSynthesisUtterance(letter);
 
+  // نطق إنجليزي
   voice.lang = "en-US";
+
+  // سرعة مناسبة للأطفال
   voice.rate = 0.75;
+
   voice.pitch = 1;
 
   window.speechSynthesis.speak(voice);
+}
 
+
+function showPage2() {
+
+  document.getElementById("page1").style.display = "none";
+  document.getElementById("page2").style.display = "block";
+
+  document.querySelector(".next-button").style.display = "none";
+  document.querySelector(".back-button").style.display = "block";
+
+  window.scrollTo(0, 0);
+}
+
+
+function showPage1() {
+
+  document.getElementById("page2").style.display = "none";
+  document.getElementById("page1").style.display = "block";
+
+  document.querySelector(".back-button").style.display = "none";
+  document.querySelector(".next-button").style.display = "block";
+
+  window.scrollTo(0, 0);
 }
 
 </script>
