@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Fresh Routine</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: white;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.page {
+    position: relative;
+    width: 100%;
+    max-width: 1455px;
+    margin: auto;
+}
+
+.page img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* مناطق الضغط */
+
+.item-button {
+
+    position: absolute;
+
+    border: none;
+
+    background: transparent;
+
+    padding: 0;
+
+    margin: 0;
+
+    cursor: pointer;
+
+    z-index: 10;
+
+    -webkit-tap-highlight-color: transparent;
+
+}
+
+
+/* تأثير بسيط عند الضغط */
+
+.item-button:active {
+
+    transform: scale(0.96);
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="page">
+
+<img
+src="fresh-routine.png"
+alt="Fresh Routine"
+>
+
+
+<!-- Face Soap -->
+
+<button
+class="item-button"
+style="
+left: 48%;
+top: 10%;
+width: 23%;
+height: 25%;
+"
+onclick="playItem('face-soap')">
+</button>
+
+
+<!-- Face Cream -->
+
+<button
+class="item-button"
+style="
+left: 74%;
+top: 8%;
+width: 22%;
+height: 36%;
+"
+onclick="playItem('face-cream')">
+</button>
+
+
+<!-- Toothpaste -->
+
+<button
+class="item-button"
+style="
+left: 51%;
+top: 36%;
+width: 20%;
+height: 43%;
+"
+onclick="playItem('toothpaste')">
+</button>
+
+
+<!-- Cup of Water -->
+
+<button
+class="item-button"
+style="
+left: 72%;
+top: 44%;
+width: 24%;
+height: 35%;
+"
+onclick="playItem('cup-of-water')">
+</button>
+
+
+<!-- Toothbrush -->
+
+<button
+class="item-button"
+style="
+left: 56%;
+top: 79%;
+width: 36%;
+height: 20%;
+"
+onclick="playItem('toothbrush')">
+</button>
+
+
+</div>
+
+
+<script>
+
+let currentAudio = null;
+
+
+function playItem(item) {
+
+    /* إيقاف الصوت السابق */
+
+    if (currentAudio) {
+
+        currentAudio.pause();
+
+        currentAudio.currentTime = 0;
+
+    }
+
+
+    /* تشغيل الصوت */
+
+    currentAudio = new Audio(item + ".mp3");
+
+    currentAudio.play().catch(function(error) {
+
+        console.log("Audio error:", error);
+
+    });
+
+}
+
+</script>
+
+
+</body>
+
+</html>
