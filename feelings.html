@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How Are You Feeling Today?</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .page {
+      position: relative;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    .page img {
+      width: 100%;
+      display: block;
+    }
+
+    .emotion {
+      position: absolute;
+      cursor: pointer;
+      background: transparent;
+      border: none;
+    }
+
+    /* Cry */
+    .cry {
+      top: 17%;
+      left: 5%;
+      width: 23%;
+      height: 14%;
+    }
+
+    /* Angry */
+    .angry {
+      top: 17%;
+      right: 5%;
+      width: 23%;
+      height: 14%;
+    }
+
+    /* Happy */
+    .happy {
+      top: 59%;
+      left: 5%;
+      width: 23%;
+      height: 14%;
+    }
+
+    /* Sleepy */
+    .sleepy {
+      top: 59%;
+      right: 5%;
+      width: 23%;
+      height: 14%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="page">
+
+    <img src="feelings.png" alt="How are you feeling today?">
+
+    <button class="emotion cry" onclick="playEmotion('cry')"></button>
+    <button class="emotion angry" onclick="playEmotion('angry')"></button>
+    <button class="emotion happy" onclick="playEmotion('happy')"></button>
+    <button class="emotion sleepy" onclick="playEmotion('sleepy')"></button>
+
+  </div>
+
+  <script>
+    let currentAudio = null;
+
+    function playEmotion(emotion) {
+
+      if (currentAudio) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+      }
+
+      currentAudio = new Audio(emotion + ".mp3");
+      currentAudio.play();
+    }
+  </script>
+
+</body>
+</html>
