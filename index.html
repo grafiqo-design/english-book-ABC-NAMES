@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>My English Book</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+
+    background: #fdf8ec;
+
+    font-family: Arial, sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.menu a {
+    text-decoration: none;
+
+    background: white;
+
+    border-radius: 25px;
+
+    padding: 25px 10px;
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    color: #333;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+
+    transition: transform 0.15s;
+}
+
+.menu a:active {
+    transform: scale(0.94);
+}
+
+@media (max-width: 500px) {
+
+    .menu {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+    <h1>🌈 My English Book</h1>
+
+    <div class="subtitle">
+        Let's Learn English! 📚✨
+    </div>
+
+
+    <div class="menu">
+
+
+        <!-- الحروف -->
+
+        <a href="letters.html">
+            🔤<br>
+            ABC Letters
+        </a>
+
+
+        <!-- الأرقام -->
+
+        <a href="numbers.html">
+            🔢<br>
+            Numbers 1–10
+        </a>
+
+
+        <!-- الألوان -->
+
+        <a href="colors.html">
+            🎨<br>
+            Colors
+        </a>
+
+
+        <!-- العناية -->
+
+        <a href="fresh-routine.html">
+            🧼<br>
+            Fresh Routine
+        </a>
+
+
+        <!-- المشاعر -->
+
+        <a href="feelings.html">
+            😊<br>
+            Feelings
+        </a>
+
+
+    </div>
+
+</div>
+
+
+</body>
+
+</html>
