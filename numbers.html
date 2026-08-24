@@ -123,6 +123,23 @@ html, body {
 <img src="numbers1.png" alt="Numbers 1 to 5">
 
 
+<!-- ================================================= -->
+<!-- صوت عنوان Numbers -->
+<!-- ================================================= -->
+
+<button
+class="number-button"
+style="
+left: 31%;
+top: 1%;
+width: 39%;
+height: 11%;
+border-radius: 20px;
+"
+onclick="playTitle()">
+</button>
+
+
 <!-- 1 -->
 
 <button
@@ -203,6 +220,23 @@ onclick="playNumber(5)">
 <div class="page" id="page2">
 
 <img src="numbers2.png" alt="Numbers 6 to 10">
+
+
+<!-- ================================================= -->
+<!-- صوت عنوان Numbers -->
+<!-- ================================================= -->
+
+<button
+class="number-button"
+style="
+left: 31%;
+top: 1%;
+width: 39%;
+height: 11%;
+border-radius: 20px;
+"
+onclick="playTitle()">
+</button>
 
 
 <!-- 6 -->
@@ -309,7 +343,9 @@ let currentAudio = null;
 
 
 
+/* ================================================= */
 /* تشغيل الرقم */
+/* ================================================= */
 
 function playNumber(number) {
 
@@ -333,7 +369,35 @@ function playNumber(number) {
 
 
 
+/* ================================================= */
+/* تشغيل عنوان Numbers */
+/* ================================================= */
+
+function playTitle() {
+
+    if (currentAudio) {
+
+        currentAudio.pause();
+
+        currentAudio.currentTime = 0;
+
+    }
+
+    currentAudio = new Audio("numbers.mp3");
+
+    currentAudio.play().catch(function(error) {
+
+        console.log("Title audio error:", error);
+
+    });
+
+}
+
+
+
+/* ================================================= */
 /* الانتقال للصفحة الثانية */
+/* ================================================= */
 
 function showPage2() {
 
@@ -351,7 +415,9 @@ function showPage2() {
 
 
 
+/* ================================================= */
 /* الرجوع للصفحة الأولى */
+/* ================================================= */
 
 function showPage1() {
 
@@ -366,6 +432,7 @@ function showPage1() {
     window.scrollTo(0, 0);
 
 }
+
 
 </script>
 
